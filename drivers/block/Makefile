@@ -42,5 +42,7 @@ obj-$(CONFIG_BLK_DEV_RSXX) += rsxx/
 obj-$(CONFIG_BLK_DEV_NULL_BLK)	+= null_blk.o
 obj-$(CONFIG_ZRAM) += zram/
 
+obj-$(CONFIG_BLK_DEV_GENODE) += genode.o
+
 skd-y		:= skd_main.o
 swim_mod-y	:= swim.o swim_asm.o

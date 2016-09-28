@@ -74,6 +74,9 @@ void imx_cscmr1_fixup(u32 *val)
 	return;
 }
 
+#ifdef CONFIG_SERIAL_GENODE
+void __init imx_register_uart_clocks(struct clk ** const clks[]) {}
+#else
 static int imx_keep_uart_clocks __initdata;
 static struct clk ** const *imx_uart_clocks __initdata;
 
@@ -111,3 +114,4 @@ static int __init imx_clk_disable_uart(void)
 	return 0;
 }
 late_initcall_sync(imx_clk_disable_uart);
+#endif
